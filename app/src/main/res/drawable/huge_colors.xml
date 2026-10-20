@@ -1,0 +1,4 @@
+<!-- Hugeicons free Stroke Rounded: ColorsIcon; MIT. See assets/licenses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+  <path android:pathData="M17.58 9.71C17.076 9.573 16.547 9.5 16 9.5C13.467 9.5 11.3 11.07 10.42 13.29M17.58 9.71C20.127 10.404 22 12.733 22 15.5C22 18.814 19.314 21.5 16 21.5C14.463 21.5 13.062 20.922 12 19.972M17.58 9.71C17.851 9.026 18 8.28 18 7.5C18 4.186 15.314 1.5 12 1.5C8.686 1.5 6 4.186 6 7.5C6 8.28 6.149 9.026 6.42 9.71M10.42 13.29C10.149 13.974 10 14.72 10 15.5C10 17.277 10.773 18.874 12 19.972M10.42 13.29C8.591 12.792 7.11 11.451 6.42 9.71M6.42 9.71C3.873 10.404 2 12.733 2 15.5C2 18.814 4.686 21.5 8 21.5C9.537 21.5 10.938 20.922 12 19.972" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>

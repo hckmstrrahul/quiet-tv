@@ -1,0 +1,5 @@
+<!-- Hugeicons free Stroke Rounded: ScanLineIcon; MIT. See assets/licenses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+  <path android:pathData="M5.992 12H17.992" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+  <path android:pathData="M14.992 21.5C16.855 21.5 17.786 21.5 18.531 21.229C19.781 20.774 20.766 19.789 21.221 18.539C21.492 17.794 21.492 16.862 21.492 15M8.992 21.5C7.13 21.5 6.199 21.5 5.453 21.229C4.203 20.774 3.219 19.789 2.764 18.539C2.492 17.794 2.492 16.862 2.492 15M8.992 2.5C7.13 2.5 6.199 2.5 5.453 2.771C4.203 3.226 3.219 4.211 2.764 5.461C2.492 6.207 2.492 7.138 2.492 9M14.992 2.5C16.855 2.5 17.786 2.5 18.531 2.771C19.781 3.226 20.766 4.211 21.221 5.461C21.492 6.207 21.492 7.138 21.492 9" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>

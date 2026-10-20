@@ -1,0 +1,4 @@
+<!-- Hugeicons free Stroke Rounded: Infinity01Icon; MIT. See assets/licenses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+  <path android:pathData="M12 12C12 12 9.261 17 6.5 17C3.739 17 2 14.761 2 12C2 9.239 3.739 7 6.5 7C9.261 7 12 12 12 12ZM12 12C12 12 14.739 17 17.5 17C20.261 17 22 14.761 22 12C22 9.239 20.261 7 17.5 7C14.739 7 12 12 12 12Z" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>

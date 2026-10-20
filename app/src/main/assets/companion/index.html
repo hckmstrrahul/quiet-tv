@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#0c1018"><meta name="color-scheme" content="dark">
+<title>Quiet TV · Your space</title><link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<header><a href="/" class="brand" aria-label="Quiet TV home"><span class="brandmark">▦</span> QUIET TV</a><span id="connection" class="status">Local companion</span></header>
+<main>
+<section id="pairing" class="pair-wrap">
+ <div class="eyebrow">A LITTLE SCREEN. A BIG DIFFERENCE.</div><h1>Your TV,<br><em>your way.</em></h1>
+ <p class="intro">Make yourself at home. Arrange your apps, pick your colors, and put a little more you on the big screen.</p>
+ <form id="pair-form" class="panel pair-card"><label for="code">Enter the code on your TV</label><div class="pair-row"><input id="code" name="code" type="text" inputmode="numeric" pattern="[0-9 ]{6,7}" autocomplete="one-time-code" maxlength="7" placeholder="000 000" required><button class="primary" type="submit">Connect <span aria-hidden="true">↗</span></button></div><p id="pair-error" class="error" role="alert"></p><p class="small">Same Wi-Fi. No account. Keep Quiet TV open while editing.</p></form>
+</section>
+<section id="dashboard" hidden>
+ <div class="page-title"><div><div class="eyebrow">YOUR LIVING ROOM, REARRANGED.</div><h1>Make it <em>yours.</em></h1><p class="intro">A change here. A fresh look over there.</p></div><button id="refresh" class="secondary">Refresh from TV</button></div>
+ <nav class="tabs" aria-label="Editor sections"><button class="tab active" data-tab="apps" aria-selected="true">Apps</button><button class="tab" data-tab="look" aria-selected="false">Look & feel</button><button class="tab" data-tab="backup" aria-selected="false">Your setup</button></nav>
+ <section id="tab-apps" class="tab-panel">
+  <div class="section-heading"><div><h2>Your app shelf</h2><p>Put your apps in the order you like.</p></div><span id="app-count" class="badge"></span></div>
+  <div class="filter-row"><input id="search" type="search" placeholder="Find an app…" aria-label="Find an app"></div>
+  <div id="app-list" class="app-list"></div>
+ </section>
+ <section id="tab-look" class="tab-panel" hidden>
+  <div class="look-grid"><div class="panel"><div class="eyebrow">SET THE MOOD</div><h2>A color that feels like you.</h2><div class="field"><label for="accent">Accent color</label><input id="accent" type="color"><div class="swatches" id="accent-swatches"></div></div><div class="field"><label for="columns">Tile size</label><select id="columns"><option value="4">Large · 4 columns</option><option value="5">Medium · 5 columns</option><option value="6">Small · 6 columns</option></select></div></div>
+  <div class="panel preview-panel"><div class="eyebrow">A LITTLE PREVIEW</div><div class="tv-frame" id="preview"><div class="preview-top"><span>QUIET TV</span><span>20:24</span></div><p>Make room for what you love.</p><div id="preview-tiles"></div></div><p class="small">Your TV updates as you edit.</p><div class="wallpaper"><h2>Your backgrounds</h2><p>Pick one, or shuffle every 10 seconds.</p><div id="wallpaper-grid" class="wallpaper-grid"></div><h2>Upload another photo</h2><label class="upload" for="wallpaper-file"><span aria-hidden="true">＋</span> Choose a photo</label><input id="wallpaper-file" class="file-input" type="file" accept="image/jpeg,image/png,image/webp"><p class="small" id="photo-status">JPEG, PNG or WebP · up to 4 MB</p><button id="clear-wallpaper" class="secondary">Use gallery background</button></div></div></div>
+ </section>
+ <section id="tab-backup" class="tab-panel" hidden><div class="backup-grid"><div class="panel"><span class="feature-icon">↓</span><h2>Keep a copy.</h2><p>Save your ordering, colors and tile size to a small layout file.</p><button id="backup" class="primary">Download layout</button><p class="small">Gallery selection and shuffle are included. Uploaded photos are not included.</p></div><div class="panel"><span class="feature-icon">↶</span><h2>Bring it back.</h2><p>Restore a saved Quiet TV layout. Apps that are no longer installed are skipped.</p><label class="upload" for="restore-file">Choose a layout file</label><input id="restore-file" class="file-input" type="file" accept="application/json,.json"><p class="small">This replaces the current layout and restores its gallery selection.</p></div></div><div class="panel connection-panel"><h2>Connected, on your terms.</h2><p>Opening another TV app ends this session. To reconnect, open the Connect device tile and enter the new code. Use Disconnect all on the TV to revoke every device.</p><button id="forget" class="secondary">Forget this browser</button></div></section>
+ <footer>Made for your TV. Kept on your Wi-Fi. <span id="version"></span></footer>
+</section>
+</main><div id="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="confirm-dialog"><form id="confirm-form"><h2 id="confirm-title">Restore this layout?</h2><p id="confirm-message"></p><div class="dialog-actions"><button type="button" id="cancel-confirm" class="secondary">Cancel</button><button class="primary">Continue</button></div></form></dialog>
+</body></html>

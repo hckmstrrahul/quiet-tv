@@ -1,0 +1,3 @@
+<resources>
+    <string name="console_save_failed">Could not save. Please try again.</string>
+</resources>

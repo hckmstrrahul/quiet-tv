@@ -1,0 +1,37 @@
+{
+  "googleSans": {
+    "commit": "b7c8331cf620346575487ef8db0e2c729f014675",
+    "url": "https://raw.githubusercontent.com/google/fonts/b7c8331cf620346575487ef8db0e2c729f014675/ofl/googlesans/",
+    "sha256": "d0a87d835a944b8b40d0e82a5651bb59ab97b936a2aeed5946eb57e7b2a3a90a"
+  },
+  "hugeicons": {
+    "package": "@hugeicons/core-free-icons",
+    "version": "4.3.5",
+    "integrity": "sha512-Sv+NjHRPnQk+yZsGCMcGznCHdTfJR9PMMOEKcJYAQU4gy90dmlc9PwdtvYOImBZIjiheMsTLL5eMn2DmHxUiUg==",
+    "icons": {
+      "palette": "PaintBoard",
+      "source": "HeartPulse",
+      "speed": "DashboardSpeed01",
+      "mode": "PlayCircle",
+      "colors": "Colors",
+      "evolution": "Activity01",
+      "density": "Grid",
+      "timer": "Timer01",
+      "shuffle": "Shuffle",
+      "brightness": "Sun03",
+      "frames": "MonitorPlay",
+      "scanlines": "ScanLine",
+      "forever": "Infinity01",
+      "reset": "RotateCcw",
+      "settings": "Settings01",
+      "preview": "View",
+      "save": "Save",
+      "cancel": "Cancel01",
+      "play": "Play",
+      "pause": "Pause",
+      "previous": "Previous",
+      "next": "Next",
+      "music": "MusicNote03"
+    }
+  }
+}

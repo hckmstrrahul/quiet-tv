@@ -1,0 +1,4 @@
+{
+  "target": "<TV-IP>:5555",
+  "serial": "<TV-SERIAL>"
+}

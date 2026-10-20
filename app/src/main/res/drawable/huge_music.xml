@@ -1,0 +1,7 @@
+<!-- Hugeicons free Stroke Rounded: MusicNote03Icon; MIT. See assets/licenses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+  <path android:pathData="M3,18.5 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+  <path android:pathData="M15,16 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+  <path android:pathData="M10 18.5L10 7C10 6.077 10 5.615 10.264 5.328C10.527 5.041 11.018 4.999 11.999 4.915C16.022 4.572 18.909 3.26 20.355 2.41C20.651 2.236 20.799 2.149 20.899 2.207C21 2.264 21 2.432 21 2.766V16" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+  <path android:pathData="M10 10C15.867 10 19.778 7.667 21 7" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>

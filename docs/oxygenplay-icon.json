@@ -1,0 +1,9 @@
+{
+  "source": "Installed OnePlus OxygenPlay APK",
+  "package": "com.oneplus.tv.launcher",
+  "version": "7.1.0.659",
+  "apkPath": "/system/app/OptvLauncher/OptvLauncher.apk",
+  "resource": "res/mipmap-xhdpi-v4/oxygen_label.png",
+  "sha256": "7e927fabd6edfe1bbac750667ff2851246d1008cf0985b6fade70626b622036e",
+  "usage": "Loaded from installed package at runtime; not bundled or recolored"
+}

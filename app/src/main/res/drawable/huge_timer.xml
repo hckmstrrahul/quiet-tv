@@ -1,0 +1,5 @@
+<!-- Hugeicons free Stroke Rounded: Timer01Icon; MIT. See assets/licenses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+  <path android:pathData="M11.081 13.152L8 7L13.42 11.28C14.19 11.888 14.194 13.047 13.428 13.661C12.661 14.274 11.519 14.027 11.081 13.152Z" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+  <path android:pathData="M5 4.82C3.149 6.639 2 9.174 2 11.978C2 17.513 6.477 22 12 22C17.523 22 22 17.513 22 11.978C22 7.124 18.558 3.077 13.987 2.153C13.151 1.984 12.733 1.899 12.367 2.2C12 2.501 12 2.987 12 3.959V4.962" android:fillColor="@android:color/transparent" android:strokeColor="#E9EEF2" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>
