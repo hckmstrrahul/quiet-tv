@@ -70,6 +70,31 @@ The **Home preview** uses the TV’s own rendered header and app artwork, preser
 
 No account or cloud service is needed. Pairing codes and sessions expire with the foreground companion server. Layout backups include app order, colors, tile size and gallery selection; uploaded photos and MK-IV settings are excluded. Use the HTTP companion on a trusted home network. [Connection and privacy details →](docs/PRIVACY.md#companion-editor)
 
+### Desktop and mobile views
+
+**Desktop · Background.** Wallpaper choices and the Home preview sit side by side.
+
+![Desktop companion showing the wallpaper gallery, 20-second shuffle and Home preview](docs/images/companion-desktop-backgrounds.png)
+
+<details>
+<summary>See all desktop controls: Colors, Layout, Apps and Your setup</summary>
+
+| Colors | Layout |
+| --- | --- |
+| ![Desktop companion with accent presets and a custom color control](docs/images/companion-desktop-colors.png) | ![Desktop companion with four-, five- and six-column layout options](docs/images/companion-desktop-layout.png) |
+| **Apps** | **Your setup** |
+| ![Desktop companion with app search and reorder controls](docs/images/companion-desktop-apps.png) | ![Desktop companion with layout download, restore and forget-browser controls](docs/images/companion-desktop-setup.png) |
+
+</details>
+
+**Mobile.** The gallery becomes two columns, with the Home preview below the controls.
+
+| Background gallery | Scrolled to the Home preview |
+| --- | --- |
+| ![Mobile companion showing the Background tab and two-column wallpaper gallery](docs/images/companion-mobile-backgrounds.png) | ![Mobile companion showing photo upload, the Home preview and current color and tile size](docs/images/companion-mobile-preview.png) |
+
+*User-supplied browser captures from October 21, 2026, shown unchanged. These show the localhost demo with sample TV data; the TV screenshots elsewhere show the running Android app. [Capture details and limits →](docs/VALIDATION.md#companion-browser-checks)*
+
 ### Try the browser UI without a TV
 
 ```sh

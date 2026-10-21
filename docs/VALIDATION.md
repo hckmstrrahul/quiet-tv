@@ -1,6 +1,6 @@
 # Validation
 
-Scope: Quiet TV **0.10.2**, OnePlus **55U1S**, Android **11/API 30**, firmware **RTM8.240401.135**. This is one verified hardware/firmware combination, not a general Android TV certification.
+Scope: Quiet TV **0.11.0**, including Home and MK-IV checks carried forward from **0.10.2**, on OnePlus **55U1S**, Android **11/API 30**, firmware **RTM8.240401.135**. This is one verified hardware/firmware combination, not a general Android TV certification.
 
 ## Automated checks
 
@@ -28,17 +28,28 @@ Commands and test-suite entry points are in [Development](DEVELOPMENT.md).
 
 ## Screenshot provenance
 
-The images in [`docs/images/`](images/) are 1920×1080 captures of the real TV. Most show version 0.10.2; `home-backgrounds.png` was refreshed on 0.11.0 to show the 20-second shuffle option. They include four Home wallpapers, appearance controls, MK-IV settings, static theme galleries and five full-screen designs.
+The `home-*.png` and `mkiv-*.png` images in [`docs/images/`](images/) are 1920×1080 captures of the real TV. Most show version 0.10.2; `home-backgrounds.png` was refreshed on 0.11.0 to show the 20-second shuffle option. They include four Home wallpapers, appearance controls, MK-IV settings, static theme galleries and five full-screen designs.
 
 Wallpaper variants were selected for documentation and the original Deep ocean choice was restored. Full-screen MK-IV variants use transient preview configuration; they do not overwrite the saved design. Home and MK-IV preferences were compared before and after capture. Pairing codes, QR screens, device addresses, serials and raw diagnostics are excluded.
 
 Screensaver numbers are generated artwork. Weather values are a snapshot, not a promise of present conditions. Green HDMI dots reflect Android’s connection status.
 
+The seven `companion-*.png` images are browser screenshots supplied by Rahul on October 21, 2026. They show the localhost demo after the TV-model header and copy cleanup in commit `d3ae2c1`. The original PNGs were copied byte-for-byte with descriptive filenames, without retouching. They were visually reviewed for pairing codes, QR codes, private addresses, serials and other personal information before publication.
+
 ## Companion browser checks
 
 The redesigned companion passes JavaScript syntax, HTML ID/ARIA-target and selector checks, plus local sample-state checks for wallpaper, color, tile size and app order. The native fixture was visually reviewed for personal information. The Android build and all 28 JVM tests pass; lint retains the same three existing warnings.
 
-Desktop/mobile browser rendering and screenshots are still pending: the browser tool’s saved localhost permission blocked capture in this session. No substitute or fabricated web screenshots are published.
+The supplied captures were visually reviewed and added to the README:
+
+| Format | Captured views |
+| --- | --- |
+| Desktop | Background, Colors, Layout, Apps and Your setup; each includes the Home preview |
+| Mobile | Background gallery, plus a scrolled view of upload controls and the Home preview |
+
+These are sample-data demo captures, not a live paired-TV session. The captured demo shows blank thumbnails for Weather, YouTube and YouTube Music; the images preserve that state. Mobile captures do not cover every tab or the pairing screen.
+
+Browser-tool interaction checks remain unverified because localhost access was blocked in the session. Reviewing the supplied screenshots establishes visual evidence only; it does not verify uploads, restore flows, touch behavior or persistence against a real TV.
 
 ## Not verified
 
