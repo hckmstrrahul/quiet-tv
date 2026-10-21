@@ -1,6 +1,8 @@
 # MK-IV screensaver
 
-MK-IV is a native Kotlin/Canvas adaptation of Rahul Chakraborty’s original Omni-data console. It is bundled with Quiet TV and also appears as **MK-IV Screensaver** in Android TV’s app launcher.
+MK-IV is a native Kotlin/Canvas adaptation of Rahul Chakraborty’s original Omni-data console. [Open the original in a browser](https://mk-4-console.vercel.app/) · [Original GitHub source](https://github.com/hckmstrrahul/mk-4-console).
+
+The native version is bundled with Quiet TV and also appears as **MK-IV Screensaver** in Android TV’s app launcher.
 
 ![MK-IV settings](images/mkiv-settings.png)
 

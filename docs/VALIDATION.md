@@ -11,6 +11,7 @@ Scope: Quiet TV **0.10.2**, OnePlus **55U1S**, Android **11/API 30**, firmware *
 | Android lint | 0 errors; 3 existing warnings: one complex vector path and two programmatic custom-view constructors |
 | Controlled media session | Title/artist/artwork/progress and supported transport behavior; no live Cast playback required |
 | Clock / sound | Foreground clock updates, pause/teardown behavior and navigation-tone checks |
+| Companion preview / shuffle | Native Home header and tiles render; no advance before 20 seconds; intermediate crossfade with an opaque underlying layer; pause retains wallpaper and stop releases images. |
 | Appearance instrumentation | 17 distinct static theme renders, no sample animation loops, settings preview paused behind chooser, selection badge, draft update, D-pad routes and unchanged saved preferences |
 
 Commands and test-suite entry points are in [Development](DEVELOPMENT.md).
@@ -27,11 +28,17 @@ Commands and test-suite entry points are in [Development](DEVELOPMENT.md).
 
 ## Screenshot provenance
 
-The images in [`docs/images/`](images/) are 1920×1080 captures of the real TV running version 0.10.2. They include four Home wallpapers, appearance controls, MK-IV settings, static theme galleries and five full-screen designs.
+The images in [`docs/images/`](images/) are 1920×1080 captures of the real TV. Most show version 0.10.2; `home-backgrounds.png` was refreshed on 0.11.0 to show the 20-second shuffle option. They include four Home wallpapers, appearance controls, MK-IV settings, static theme galleries and five full-screen designs.
 
 Wallpaper variants were selected for documentation and the original Deep ocean choice was restored. Full-screen MK-IV variants use transient preview configuration; they do not overwrite the saved design. Home and MK-IV preferences were compared before and after capture. Pairing codes, QR screens, device addresses, serials and raw diagnostics are excluded.
 
 Screensaver numbers are generated artwork. Weather values are a snapshot, not a promise of present conditions. Green HDMI dots reflect Android’s connection status.
+
+## Companion browser checks
+
+The redesigned companion passes JavaScript syntax, HTML ID/ARIA-target and selector checks, plus local sample-state checks for wallpaper, color, tile size and app order. The native fixture was visually reviewed for personal information. The Android build and all 28 JVM tests pass; lint retains the same three existing warnings.
+
+Desktop/mobile browser rendering and screenshots are still pending: the browser tool’s saved localhost permission blocked capture in this session. No substitute or fabricated web screenshots are published.
 
 ## Not verified
 

@@ -49,4 +49,6 @@ Open-Meteo data uses [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 
 
 Installed application icons are loaded from the TV where applicable. Apple TV, PlayStation, OnePlus/OxygenPlay, Netflix, YouTube, Google Play and other marks belong to their respective owners. Their appearance in the UI or screenshots does not imply affiliation or endorsement. The local Netflix red-N artwork is a brand treatment, not an independently licensed trademark.
 
-MK-IV is a native adaptation of Rahul Chakraborty’s original console design. The private reference repository is not bundled or required to build this project. Native instrumentation, preview/gallery rendering, utility-tile illustrations, clock geometry and synthesized navigation audio created for Quiet TV are included under the root MIT license.
+MK-IV is a native adaptation of Rahul Chakraborty’s original console design. The [original web project](https://github.com/hckmstrrahul/mk-4-console) is public and [runs in a browser](https://mk-4-console.vercel.app/); it is not bundled or required to build Quiet TV. Native instrumentation, preview/gallery rendering, utility-tile illustrations, clock geometry and synthesized navigation audio created for Quiet TV are included under the root MIT license.
+
+The local companion sandbox includes a native Home header and app-tile fixture in `scripts/fixtures/companion-home.json`. Third-party app logos retain their owners’ rights; the fixture is a UI demonstration, not a redistribution of those apps.

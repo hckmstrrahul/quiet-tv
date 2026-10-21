@@ -67,3 +67,18 @@ Keep remote focus and Back behavior predictable. Scope rendering/network work to
 For a TV change, build and run the relevant tests, install as an ordinary app first, then inspect real device screenshots. Keep system mutations separate from UI development and retain local rollback records. Do not commit APKs, keys, device configuration, inventories or raw logs.
 
 The current validation boundary and remaining physical tests are recorded in [VALIDATION.md](VALIDATION.md).
+
+## Companion UI preview
+
+```sh
+python3 scripts/preview-companion.py
+```
+
+Open **http://localhost:8766** for the sample editor, or **http://localhost:8766/?pair=1** for the pairing screen (sample code `123456`). The server binds only to loopback, serves the real bundled HTML/CSS/JS and fonts, and simulates the companion API in memory. It never connects to a TV. Restart it to reset the sample layout. `--port` selects another local port.
+
+The companion shares the TV’s Google Sans, selected Hugeicons vectors, original utility-tile artwork, dark panels, accent colors and gallery selection treatment. Appearance opens first; colors, tile size and app order update the layout preview. The paired TV supplies native header and tile renders through authenticated `/api/preview`. The localhost sandbox supplies a reviewed fixture from `scripts/fixtures/companion-home.json`; its header is static, while tile order, columns and background remain editable. Monograms are only a fallback while artwork loads. Connect device and MK-IV remain the first two fixed Home tiles.
+
+
+`HomePreview` draws only the Home header and tiles, excluding dialogs, QR codes and other applications. The browser requests a fresh snapshot after edits, Refresh, or returning to the tab. This is not continuous screen streaming. Native artwork is refreshed after layout settles; wallpaper layers animate independently using opacity with a 1.2-second ease-in-out transition. Hidden browser tabs cancel shuffle timers; native Home cancels timers when paused and releases images when stopped.
+
+The `companion` instrumentation suite exports a native fixture into app-private `files/companion-preview.json` and checks the 20-second shuffle interval, an intermediate crossfade frame, an opaque underlying image, pause retention and stop cleanup. Its isolated test preferences do not change Home choices. Review any exported header for personal now-playing information before copying it into the repository.

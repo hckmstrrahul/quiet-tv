@@ -31,7 +31,7 @@ flowchart LR
 | Weather | `WeatherRepository.kt`, `WeatherData.kt`, `WeatherWidget.kt` | HTTPS, validation/cache, conditions and vertical AQI scale |
 | Clock / feedback | `HomeTimeWidget.kt`, `TileFocusEffect.kt`, `HomeNavigationSound.kt` | Foreground clock, focus motion and short synthesized tone |
 | Shared UI | `DialogUi.kt`, `SettingsAccordion.kt` | Card rows, icon/text alignment, compact actions, focus and selection |
-| Companion | `CompanionEditor.kt`, `CompanionServer.kt`, `assets/companion/` | Authenticated LAN editing and local browser UI |
+| Companion | `CompanionEditor.kt`, `CompanionServer.kt`, `HomePreview.kt`, `assets/companion/` | Authenticated LAN editing and local browser UI |
 | MK-IV | `screensaver/` | Configuration, palette catalog, panel packing, color cycling and Canvas instruments |
 
 Kotlin files are under [`app/src/main/java/dev/rahul/quiettv/`](../app/src/main/java/dev/rahul/quiettv/).
@@ -89,3 +89,5 @@ The native MK-IV renderer adapts the author’s original desktop console design 
 - [Android DreamService](https://developer.android.com/reference/android/service/dreams/DreamService)
 - [Android MediaSessionManager](https://developer.android.com/reference/android/media/session/MediaSessionManager)
 - [Android TvInputManager](https://developer.android.com/reference/android/media/tv/TvInputManager)
+
+The paired browser’s Home preview uses a bounded native render: one transparent header and at most 18 app tiles, refreshed after edits or on request. It never captures another application or a dialog. The wallpaper is a separate browser layer, shuffled every 20 seconds with the same 1.2-second opacity crossfade as native Home. Hidden browser tabs stop their shuffle timer; reduced-motion preferences suppress the fade.

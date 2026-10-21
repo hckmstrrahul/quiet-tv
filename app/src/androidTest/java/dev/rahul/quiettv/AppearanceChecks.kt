@@ -36,12 +36,14 @@ class AppearanceChecks(private val runner:Instrumentation) {
         try {
             val context=runner.targetContext
             val saved=ConsolePreferences.read(context)
-            val homePrefs=context.getSharedPreferences("home",0).all.toMap()
+            val homePrefs=context.getSharedPreferences("home",0).all.filterKeys {it!="wallpaperCurrent"}
             val home=runner.startActivitySync(Intent(context,MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) as MainActivity
             await("Home") {home.hasWindowFocus() && views(home.window.decorView).any {it is WeatherWidget}}
             shot("appearance-home.png")
             ui {views(home.window.decorView).first {it.contentDescription=="Appearance"}.performClick()}
             await("Home settings") {dialog(home,"homeSettings")?.isShowing==true}
+            ui { check(views(dialog(home,"homeSettings")!!.window!!.decorView).filterIsInstance<TextView>().any {it.text.toString()=="Shuffle all · 20s"}) }
+            shot("appearance-backgrounds.png")
             ui {
                 val window=dialog(home,"homeSettings")!!.window!!.decorView
                 views(window).filterIsInstance<TextView>().first {it.isClickable && it.text.toString()=="Layout"}.performClick()
@@ -100,7 +102,7 @@ class AppearanceChecks(private val runner:Instrumentation) {
             check(ConsolePreferences.read(context)==saved)
             openThemes()
             ui {check(views(dialog(activity,"themeDialog")!!.window!!.decorView).any {it.contentDescription=="ENGINEERING, selected" && it.isSelected});dialog(activity,"themeDialog")!!.dismiss();activity.finish()}
-            check(context.getSharedPreferences("home",0).all==homePrefs)
+            check(context.getSharedPreferences("home",0).all.filterKeys {it!="wallpaperCurrent"}==homePrefs)
             result.putString("result","PASS: current Home values; all 17 distinct theme previews; no gallery or background preview animation; D-pad grid/Close routes; selected badge and draft update; saved Home/MK-IV preferences unchanged")
             runner.finish(Activity.RESULT_OK,result)
         } catch(error:Throwable) {

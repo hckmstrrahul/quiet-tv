@@ -24,8 +24,10 @@ import java.util.concurrent.CopyOnWriteArrayList
 /** Separate test APK only. Publishes a clearly labelled media session with NO audio. */
 class WidgetInstrumentation:Instrumentation() {
     private var appearanceOnly=false
-    override fun onCreate(arguments:Bundle?) {super.onCreate(arguments);appearanceOnly=arguments?.getString("suite")=="appearance";start()}
+    private var companionOnly=false
+    override fun onCreate(arguments:Bundle?) {super.onCreate(arguments);appearanceOnly=arguments?.getString("suite")=="appearance";companionOnly=arguments?.getString("suite")=="companion";start()}
     override fun onStart() {
+        if(companionOnly){CompanionChecks(this).run();return}
         if(appearanceOnly){AppearanceChecks(this).run();return}
         var session:MediaSession?=null
         val events=CopyOnWriteArrayList<String>()

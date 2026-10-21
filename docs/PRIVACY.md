@@ -23,6 +23,8 @@ ADB is a development/installation channel. The application does not contain an A
 
 ## Companion editor
 
+The authenticated Home-preview endpoint returns a rendered Home header and app tiles. It can include the now-playing title/artwork, weather, clock and HDMI labels currently displayed on Home. It does not capture other apps, pairing dialogs or QR codes. These snapshots are sent only to the paired local browser and are not uploaded anywhere.
+
 Opening **Connect device** starts an explicitly requested foreground session. The pairing window is ten minutes; successful pairing issues a random 256-bit bearer token. Sessions expire after one hour, with at most eight sessions and eight pairing attempts per minute. Request size, header size, timeouts, queue depth and worker count are bounded.
 
 API requests require authorization. Numeric Host and matching Origin checks reduce cross-origin and DNS-rebinding exposure. Assets are bundled; there are no CORS wildcards, cookies, arbitrary file access or shell-command endpoints. Pausing Home stops the server and invalidates its in-memory sessions.

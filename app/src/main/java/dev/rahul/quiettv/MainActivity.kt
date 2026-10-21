@@ -77,12 +77,17 @@ class MainActivity : Activity() {
         prefs.edit().apply { prefs.all.keys.filter { it=="favorites" || it=="groups" || it.startsWith("group:") }.forEach { remove(it) } }.apply()
         if(!prefs.getBoolean("gallery_v1",false))prefs.edit().putBoolean("gallery_v1",true).putString("wallpaperId",WallpaperCatalog.defaultId).putBoolean("wallpaperShuffle",false).putBoolean("photo",false).apply()
         selectedPackage = state?.getString("selected")
-        companion = CompanionEditor(this, { apps.map { it.pkg to it.label } }) {
+        companion = CompanionEditor(this, { apps.map { it.pkg to it.label } }, { companionPreview() }) {
             pairingDialog?.dismiss()
             render()
         }
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         window.decorView.viewTreeObserver.addOnGlobalFocusChangeListener(homeFocusListener)
+    }
+    internal fun companionPreview(): org.json.JSONObject {
+        val order = strings("order")
+        val sorted = apps.sortedBy { order.indexOf(it.pkg).let { index -> if (index < 0) Int.MAX_VALUE else index } }
+        return HomePreview.capture(body, listOf(connectTile, screensaverTile) + sorted.map { it.pkg })
     }
     override fun onResume() {
         super.onResume()

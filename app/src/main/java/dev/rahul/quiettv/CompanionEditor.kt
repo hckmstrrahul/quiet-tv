@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit
 class CompanionEditor(
     private val context: Context,
     private val apps: () -> List<Pair<String, String>>,
+    private val preview: () -> JSONObject,
     private val changed: () -> Unit
 ) {
     private val prefs = context.getSharedPreferences("home", Context.MODE_PRIVATE)
@@ -61,6 +62,7 @@ class CompanionEditor(
             try {
                 when {
                     method == "GET" && path == "/api/state" -> response(state())
+                    method == "GET" && path == "/api/preview" -> response(preview())
                     method == "GET" && path == "/api/backup" -> response(config())
                     method == "POST" && path == "/api/action" -> {
                         action(JSONObject(bytes.toString(Charsets.UTF_8))); changed(); response(state())
@@ -88,7 +90,7 @@ class CompanionEditor(
         val list = JSONArray()
         sorted.forEach { (pkg, label) -> list.put(JSONObject().put("package", pkg).put("label", label)) }
         return config().put("wallpapers",JSONArray(WallpaperCatalog.pictures.map {JSONObject().put("id",it.id).put("title",it.title)})).put("apps", list).put("photo", prefs.getBoolean("photo", false))
-            .put("connectedDevices", server?.pairedCount ?: 0).put("appVersion", "0.8.0")
+            .put("connectedDevices", server?.pairedCount ?: 0).put("appVersion", context.packageManager.getPackageInfo(context.packageName, 0).versionName)
     }
     private fun color(value: String): String {
         require(Regex("#[0-9a-fA-F]{6}").matches(value)) { "Use a color like #AADBCB." }; return value.uppercase()

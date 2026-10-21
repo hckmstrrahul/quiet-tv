@@ -60,13 +60,13 @@ class HomeBackdrop(context:Context,private val prefs:SharedPreferences):FrameLay
             if(loaded && fade && ValueAnimator.areAnimatorsEnabled()) {
                 previous.bringToFront()
                 scrimToFront()
-                previous.animate().alpha(0f).setDuration(250).setInterpolator(PathInterpolator(.23f,1f,.32f,1f)).withEndAction {previous.setImageDrawable(null)}.start()
+                previous.animate().alpha(0f).setDuration(WallpaperCatalog.crossfadeDurationMs).setInterpolator(PathInterpolator(.42f,0f,.58f,1f)).withEndAction {previous.setImageDrawable(null)}.start()
             } else {previous.alpha=0f;previous.setImageDrawable(null);scrimToFront()}
             front=1-front;loaded=true;currentId=id;changes++
             if(id!="custom")prefs.edit().putString("wallpaperCurrent",id).apply()
             handler.removeCallbacks(rotate)
             scheduled=prefs.getBoolean("wallpaperShuffle",false) && !prefs.getBoolean("photo",false)
-            if(scheduled)handler.postDelayed(rotate,10_000)
+            if(scheduled)handler.postDelayed(rotate,WallpaperCatalog.shuffleIntervalMs)
         }
     }
     private fun scrimToFront() {for(i in 0 until childCount)if(getChildAt(i) !is ImageView){getChildAt(i).bringToFront();break}}

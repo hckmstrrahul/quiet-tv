@@ -14,7 +14,7 @@ import android.widget.*
 class WallpaperGallery(context:Context,private val prefs:SharedPreferences,private val leftId:Int,private val closeId:Int,private val changed:()->Unit):ScrollView(context) {
     private val worker=ForegroundTasks {post {it()}}
     private val thumbnails=mutableListOf<Pair<ImageView,String>>()
-    private val entries=listOf(WallpaperCatalog.Picture("shuffle","Shuffle all · 10s"))+WallpaperCatalog.pictures
+    private val entries=listOf(WallpaperCatalog.Picture("shuffle","Shuffle all · 20s"))+WallpaperCatalog.pictures
     private val cards=mutableListOf<View>()
     private val badges=mutableListOf<ImageView>()
     val firstOption:View get()=cards.getOrElse(selectedIndex()){cards.first()}

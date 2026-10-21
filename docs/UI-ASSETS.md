@@ -39,3 +39,5 @@ Recreate it with `python3 scripts/generate-navigation-sound.py`. Home plays it a
 ## Documentation images
 
 The visual README uses real 1080p TV captures, not composited UI mockups. Full-screen MK-IV samples are transient native previews. Third-party app marks and wallpaper images visible inside screenshots retain their respective rights. See [validation and capture scope](VALIDATION.md).
+
+The companion embeds a small selection of the same MIT-licensed Hugeicons paths and original utility-tile vectors in `app.js`. Simple navigation/upload glyphs are original SVG geometry. No external icon or font service is used.

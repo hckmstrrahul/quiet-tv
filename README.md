@@ -19,7 +19,7 @@ Built for a OnePlus U1S: your apps, connected HDMI devices, now playing, a clock
 | Now playing | Artwork, track information, progress and supported playback controls from Android media sessions. |
 | Clock | Dark square face, accent-colored seconds hand, local time and date. |
 | Weather | Bengaluru conditions, daily high/low and a vertical US AQI scale. Cached and refreshed while Home is visible. |
-| Appearance | Nine wallpapers, 10-second shuffle, preset/custom accent colors and tile size. |
+| Appearance | Nine wallpapers, 20-second shuffle with a smooth crossfade, preset/custom accent colors and tile size. |
 | Remote feedback | Gentle focus motion, captions and an original soft navigation sound. |
 | Connect device | Optional local browser editor for app order, colors, backgrounds and layout backup. |
 | MK-IV | Native, configurable, full-screen data-visualization screensaver. |
@@ -50,9 +50,39 @@ The background gallery opens first. A persistent checkmark marks the saved choic
 
 Home changes save immediately. The wallpaper stays visible behind the TV’s settings overlay; animation and background work pause while Home is inactive.
 
+## Your TV, in your hands
+
+**Connect device** opens a local HTML control page on your phone, tablet or desktop. It uses the same Google Sans, dark panels, accent colors, rounded controls and wallpaper gallery as Home.
+
+1. Open **Connect device** on the TV.
+2. Join the same Wi-Fi, scan the QR code and enter the six-digit pairing code shown on the TV.
+3. Edit in your browser. Changes save immediately; keep Quiet TV open while editing.
+
+| View | Controls |
+| --- | --- |
+| **Background** | Nine wallpapers, **Shuffle all · 20s**, and a personal photo upload. The TV and browser preview crossfade over 1.2 seconds, respecting reduced-motion settings. |
+| **Colors** | Sage, Ice, Lavender, Amber or a custom accent. |
+| **Layout** | Large / Medium / Small tiles: 4, 5 or 6 apps per row. |
+| **Apps** | Search installed apps and move them earlier or later. Connect device and MK-IV stay first. |
+| **Your setup** | Download or restore a Home layout, confirm before restoring, or forget the browser connection. |
+
+The **Home preview** uses the TV’s own rendered header and app artwork, preserving widget proportions, HDMI pills and grid spacing. It refreshes after edits or **Refresh from TV**; it is a snapshot, not a video mirror. Wallpaper shuffling is animated locally; its sequence can differ from the TV’s.
+
+No account or cloud service is needed. Pairing codes and sessions expire with the foreground companion server. Layout backups include app order, colors, tile size and gallery selection; uploaded photos and MK-IV settings are excluded. Use the HTTP companion on a trusted home network. [Connection and privacy details →](docs/PRIVACY.md#companion-editor)
+
+### Try the browser UI without a TV
+
+```sh
+python3 scripts/preview-companion.py
+```
+
+Open **http://localhost:8766** for the sample editor, or **http://localhost:8766/?pair=1** for pairing with demo code `123456`. The local demo uses sample data and a privacy-reviewed native Home capture; its header is static. Changes stay in memory and never reach a TV. [Companion development notes →](docs/DEVELOPMENT.md#companion-ui-preview)
+
 ## MK-IV · Omni-data console
 
-A native Android adaptation of my original MK-IV console: **30 visualization families, 17 palettes**, and a layout that changes color without constantly replacing its instruments. Waves, radar, gauges, terminal traces, globes and other panels are drawn directly with Canvas.
+The original project is **[MK-IV for the web](https://mk-4-console.vercel.app/)** — open it to see the screensaver in your browser. Its source is public at **[hckmstrrahul/mk-4-console](https://github.com/hckmstrrahul/mk-4-console)**.
+
+Quiet TV includes a native Android adaptation: **30 visualization families, 17 palettes**, and a layout that changes color without constantly replacing its instruments. Waves, radar, gauges, terminal traces, globes and other panels are drawn directly with Canvas.
 
 **All readings are procedural artwork.** They are not live system, financial, medical or audio measurements.
 
@@ -140,7 +170,7 @@ The helper deliberately accepts only the tested OnePlus model/build and your exp
 ## Validation and limits
 
 - Debug build, **28 JVM tests**, and Android lint pass with **0 errors and 3 existing warnings**.
-- On-device checks cover the media card with a controlled session, clock lifecycle, theme gallery, navigation and preservation of settings.
+- On-device checks cover the media card with a controlled session, clock lifecycle, theme gallery, native companion preview, 20-second wallpaper crossfade, navigation and preservation of settings.
 - HDMI discovery and names are verified; **actual input switching was not exercised**.
 - Live YouTube Cast playback was intentionally skipped. Media support depends on what the playing app exposes to Android.
 - Weather is currently fixed to Bengaluru. AQI uses the **US scale** and modeled Open-Meteo/CAMS data, not a nearby physical sensor.

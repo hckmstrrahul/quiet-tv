@@ -1,6 +1,8 @@
 package dev.rahul.quiettv
 
 object WallpaperCatalog {
+    const val shuffleIntervalMs = 20_000L
+    const val crossfadeDurationMs = 1_200L
     data class Picture(val id:String,val title:String)
     val pictures=listOf("Ember","Dusk","Deep ocean","Fern","Starlight","Prism","Aurora","Silk","Graphite")
         .mapIndexed { i,title->Picture("wallpaper_%02d".format(java.util.Locale.US,i+1),title) }
