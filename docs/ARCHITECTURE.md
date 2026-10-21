@@ -56,6 +56,8 @@ Selection creates a passthrough-channel URI and delegates to the system TV app. 
 
 The widget observes Android playback, not the contents of an HDMI signal. Returning Home does not automatically stop or pause the previous player. The navigation tone is a brief SoundPool effect, not a media player or audio-focus owner. MK-IV is silent.
 
+Home stores `navigationSoundEnabled` (default `true`) and `navigationSoundVolume` (default `50`) separately from layout settings. The volume is clamped to 0–100 and applied as the effect's gain; Off and 0% skip playback entirely. Muting also stops any current effect. Neither control changes Android stream volume, and both survive activity recreation and app updates.
+
 ## Weather
 
 The current configuration is Bengaluru (`12.9716, 77.5946`, `Asia/Kolkata`). The app requests forecast conditions/daily extremes and US AQI through two Open-Meteo HTTPS endpoints, with six-second connect/read timeouts.

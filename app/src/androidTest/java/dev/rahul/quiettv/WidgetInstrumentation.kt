@@ -25,8 +25,10 @@ import java.util.concurrent.CopyOnWriteArrayList
 class WidgetInstrumentation:Instrumentation() {
     private var appearanceOnly=false
     private var companionOnly=false
-    override fun onCreate(arguments:Bundle?) {super.onCreate(arguments);appearanceOnly=arguments?.getString("suite")=="appearance";companionOnly=arguments?.getString("suite")=="companion";start()}
+    private var soundOnly=false
+    override fun onCreate(arguments:Bundle?) {super.onCreate(arguments);appearanceOnly=arguments?.getString("suite")=="appearance";companionOnly=arguments?.getString("suite")=="companion";soundOnly=arguments?.getString("suite")=="sound";start()}
     override fun onStart() {
+        if(soundOnly){NavigationSoundChecks(this).run();return}
         if(companionOnly){CompanionChecks(this).run();return}
         if(appearanceOnly){AppearanceChecks(this).run();return}
         var session:MediaSession?=null

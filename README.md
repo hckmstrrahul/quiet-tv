@@ -20,7 +20,7 @@ Built for a OnePlus U1S: your apps, connected HDMI devices, now playing, a clock
 | Clock | Dark square face, accent-colored seconds hand, local time and date. |
 | Weather | Bengaluru conditions, daily high/low and a vertical US AQI scale. Cached and refreshed while Home is visible. |
 | Appearance | Nine wallpapers, 20-second shuffle with a smooth crossfade, preset/custom accent colors and tile size. |
-| Remote feedback | Gentle focus motion, captions and an original soft navigation sound. |
+| Remote feedback | Gentle focus motion, captions and an original soft navigation sound, with On/Off and 0–100% volume controls. Default: 50%. |
 | Connect device | Optional local browser editor for app order, colors, backgrounds and layout backup. |
 | MK-IV | Native, configurable, full-screen data-visualization screensaver. |
 
@@ -49,6 +49,15 @@ The background gallery opens first. A persistent checkmark marks the saved choic
 ![Accent color picker with preset colors and a custom hex option](docs/images/home-accent-picker.png)
 
 Home changes save immediately. The wallpaper stays visible behind the TV’s settings overlay; animation and background work pause while Home is inactive.
+
+**Appearance → Sound** controls the Home hover and D-pad tone. Turn **Navigation sounds** off, or set **Sound volume** in 10% steps. Volume starts at **50%**; **0%** is silent. Turning sound off preserves your chosen volume, and changing the level while off keeps it muted. These settings persist on the TV and do not change media/system volume. Sound preferences are separate from the companion’s layout backup.
+
+<details>
+<summary>Sound controls on the TV</summary>
+
+![Home Sound settings with navigation sounds enabled and volume set to 60% during testing; the default is 50%](docs/images/home-sound.png)
+
+</details>
 
 ## Your TV, in your hands
 

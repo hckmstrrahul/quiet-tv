@@ -37,6 +37,8 @@ The 28 JVM tests exercise HDMI grouping/order, lifecycle workers, playback math,
 
 Native instrumentation uses `WidgetInstrumentation`. The default suite creates a **silent controlled media session** to verify metadata, transport actions, clock lifecycle and navigation sound behavior. The appearance suite checks native settings, 17 distinct static theme samples, focus routes and unchanged saved preferences.
 
+The `sound` suite checks the 50% default, mute and zero-volume playback suppression, gain limits, persistence, the native Sound settings and D-pad volume picker. It verifies that system volume stays unchanged and restores the original Home preferences.
+
 With the test TV explicitly configured, the app installed, and the remote idle:
 
 ```sh
@@ -45,6 +47,7 @@ adb -s "$QUIET_TV_ADB_TARGET" install -r app/build/outputs/apk/debug/app-debug.a
 adb -s "$QUIET_TV_ADB_TARGET" install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 adb -s "$QUIET_TV_ADB_TARGET" shell am instrument -w dev.rahul.quiettv.test/dev.rahul.quiettv.WidgetInstrumentation
 adb -s "$QUIET_TV_ADB_TARGET" shell am instrument -w -e suite appearance dev.rahul.quiettv.test/dev.rahul.quiettv.WidgetInstrumentation
+adb -s "$QUIET_TV_ADB_TARGET" shell am instrument -w -e suite sound dev.rahul.quiettv.test/dev.rahul.quiettv.WidgetInstrumentation
 adb -s "$QUIET_TV_ADB_TARGET" uninstall dev.rahul.quiettv.test
 ```
 

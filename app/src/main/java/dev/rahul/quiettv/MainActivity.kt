@@ -490,8 +490,8 @@ class MainActivity : Activity() {
         dialog.setCanceledOnTouchOutside(true)
         homeSettings=dialog
         dialog.setOnDismissListener { if(homeSettings===dialog)homeSettings=null }
-        val titles=listOf("Background","Colors","Layout")
-        val icons=listOf(R.drawable.huge_preview,R.drawable.huge_palette,R.drawable.huge_density)
+        val titles=listOf("Background","Colors","Layout","Sound")
+        val icons=listOf(R.drawable.huge_preview,R.drawable.huge_palette,R.drawable.huge_density,R.drawable.huge_music)
         val menus=mutableListOf<TextView>()
         var selected=-1
         var firstOption:View?=null
@@ -515,6 +515,7 @@ class MainActivity : Activity() {
             val options=when(index) {
                 1->listOf(Triple("Accent color",R.drawable.huge_palette,0))
                 2->listOf(Triple("Tile size",R.drawable.huge_density,2))
+                3->listOf(Triple("Navigation sounds",R.drawable.huge_music,3),Triple("Sound volume",R.drawable.huge_music,4))
                 else->emptyList()
             }
             val rows=options.map { (_,icon,action)->
@@ -559,6 +560,8 @@ class MainActivity : Activity() {
     private fun appearanceValue(index:Int):String=when(index) {
         0->"Accent color  ·  "+(accents.firstOrNull {it.second.equals(prefs.getString("accent","#AADBCB"),true)}?.first ?: prefs.getString("accent","#AADBCB"))
         2->"Tile size  ·  ${listOf("Large","Medium","Small")[(prefs.getInt("columns",6)-4).coerceIn(0,2)]} · ${prefs.getInt("columns",6)} columns"
+        3->"Navigation sounds  ·  ${if(navigationSound.enabled)"On" else "Off"}"
+        4->"Sound volume  ·  ${navigationSound.volume}%"
         else->""
     }
     private fun appearanceAction(index:Int,changed:()->Unit={}) {
@@ -567,6 +570,12 @@ class MainActivity : Activity() {
                     if (n == accents.size) customColor("accent",changed) else { prefs.edit().putString("accent", accents[n].second).apply(); changed();render() }
                 }
                 2 -> choose("Tile size", listOf("Large · 4 columns", "Medium · 5 columns", "Small · 6 columns"),prefs.getInt("columns",6)-4,R.drawable.huge_density) { n -> prefs.edit().putInt("columns", n + 4).apply(); changed();render() }
+                3 -> {navigationSound.enabled=!navigationSound.enabled;changed()}
+                4 -> choose("Sound volume",(0..100 step 10).map {if(it==0)"0% · Muted" else "$it%"},navigationSound.volume/10,R.drawable.huge_music) { n ->
+                    navigationSound.volume=n*10;changed()
+                    // A single sample makes the selected level audible; Off and 0% stay silent.
+                    navigationSound.play()
+                }
 
             }
     }

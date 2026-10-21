@@ -1,6 +1,6 @@
 # Validation
 
-Scope: Quiet TV **0.11.0**, including Home and MK-IV checks carried forward from **0.10.2**, on OnePlus **55U1S**, Android **11/API 30**, firmware **RTM8.240401.135**. This is one verified hardware/firmware combination, not a general Android TV certification.
+Scope: Quiet TV **0.11.1**, including appearance and companion checks carried forward from **0.10.2–0.11.0**, on OnePlus **55U1S**, Android **11/API 30**, firmware **RTM8.240401.135**. This is one verified hardware/firmware combination, not a general Android TV certification.
 
 ## Automated checks
 
@@ -11,6 +11,7 @@ Scope: Quiet TV **0.11.0**, including Home and MK-IV checks carried forward from
 | Android lint | 0 errors; 3 existing warnings: one complex vector path and two programmatic custom-view constructors |
 | Controlled media session | Title/artist/artwork/progress and supported transport behavior; no live Cast playback required |
 | Clock / sound | Foreground clock updates, pause/teardown behavior and navigation-tone checks |
+| Sound preferences | Enabled at 50% by default; Off and 0% suppress playback; adjusting volume preserves Off; gain clamped to 0–100%; restart/persistence; native toggle and D-pad volume picker; system volume unchanged and saved Home preferences restored |
 | Companion preview / shuffle | Native Home header and tiles render; no advance before 20 seconds; intermediate crossfade with an opaque underlying layer; pause retains wallpaper and stop releases images. |
 | Appearance instrumentation | 17 distinct static theme renders, no sample animation loops, settings preview paused behind chooser, selection badge, draft update, D-pad routes and unchanged saved preferences |
 
@@ -18,6 +19,7 @@ Commands and test-suite entry points are in [Development](DEVELOPMENT.md).
 
 ## On-TV observations
 
+- Version 0.11.1 was installed with a same-key update; the installed APK's SHA-256 matches the local build. Existing Home preferences were preserved, and the temporary test APK was removed after checks.
 - Quiet TV launches as an app and resolves as Home after the documented stock-launcher workaround. Stock Home restoration was exercised during development.
 - Connected HDMI entries are first; CEC names appear for Apple TV and PlayStation 5.
 - Appearance, app grid, settings and MK-IV support remote navigation. Outside dismissal and Back routes were checked.
@@ -29,6 +31,8 @@ Commands and test-suite entry points are in [Development](DEVELOPMENT.md).
 ## Screenshot provenance
 
 The `home-*.png` and `mkiv-*.png` images in [`docs/images/`](images/) are 1920×1080 captures of the real TV. Most show version 0.10.2; `home-backgrounds.png` was refreshed on 0.11.0 to show the 20-second shuffle option. They include four Home wallpapers, appearance controls, MK-IV settings, static theme galleries and five full-screen designs.
+
+`home-sound.png` shows the native 0.11.1 Sound panel at the 60% level selected during its test. The test restores the previous setting afterward; the default remains 50%.
 
 Wallpaper variants were selected for documentation and the original Deep ocean choice was restored. Full-screen MK-IV variants use transient preview configuration; they do not overwrite the saved design. Home and MK-IV preferences were compared before and after capture. Pairing codes, QR screens, device addresses, serials and raw diagnostics are excluded.
 
