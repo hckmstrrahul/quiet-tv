@@ -6,6 +6,8 @@ Built for a OnePlus U1S: your apps, connected HDMI devices, now playing, a clock
 
 [Setup & recovery](docs/SETUP.md) · [Architecture](docs/ARCHITECTURE.md) · [MK-IV](docs/SCREENSAVER.md) · [Development](docs/DEVELOPMENT.md) · [Privacy](docs/PRIVACY.md)
 
+**Resume development with Codex:** open this `quiet-tv` folder and say, “Start a Quiet TV editing session using the repo skill.” [AGENTS.md](AGENTS.md) points to the [session skill](.agents/skills/quiet-tv-session/SKILL.md), which prepares localhost:8766 and the verified Wi-Fi TV mirror. Device details stay in the ignored local configuration.
+
 ![Quiet TV Home: Deep ocean wallpaper, Apple TV and PlayStation 5 connected over HDMI, music, clock, Bengaluru weather and app grid](docs/images/home-deep-ocean.png)
 
 *Quiet TV 0.10.2 on a OnePlus 55U1S. HDMI 2 reports Apple TV; HDMI 3 reports PlayStation 5. Green dots indicate the connection state reported by Android.*

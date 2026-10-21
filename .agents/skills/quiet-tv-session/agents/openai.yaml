@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quiet TV session"
+  short_description: "Resume localhost preview and live TV editing"
+  default_prompt: "Use $quiet-tv-session to start localhost:8766, connect to my configured TV over Wi-Fi, open the live mirror, and prepare to continue editing."
