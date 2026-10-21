@@ -82,10 +82,6 @@ function paired(value) {
  $('#connection').textContent = isPreview ? 'Local preview · sample TV' : value ? 'Connected to your TV' : 'Local companion';
  $('#connection').classList.toggle('connected', value);
  if (!value) { state = null; clearImages(); }
- if (isPreview) {
-  $('#save-note').textContent = 'Try it out. Your TV stays as it is.';
-  $('#session-note').textContent = 'This localhost preview uses sample data. Changes here only affect this preview.';
- }
 }
 async function request(path, body, mime = 'application/json') {
  const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 10000);
